@@ -35,6 +35,8 @@ def generate_music():
         "description": f"A {genre} track at {bpm} BPM for {goal}.",
         "listening_instructions": f"Listen for about {duration_seconds} seconds with headphones and focus on the rhythm."
     })
+import os
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
