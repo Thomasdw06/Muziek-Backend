@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
-
+@app.route("/", methods=["GET"])
+def home():
+    return "Backend werkt!"
 @app.route("/generate-music", methods=["POST"])
 def generate_music():
     data = request.get_json()
